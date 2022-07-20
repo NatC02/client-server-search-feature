@@ -63,7 +63,6 @@ Built and implemented with:
 - Express
 - Node
 - Chance
-
 - React
 - HTML5
 - CSS3
