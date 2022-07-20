@@ -1,8 +1,15 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './App.css'
 
 function App() {
   const [animals, setAnimals] = useState([]);
+
+  // cache results in browser
+  useEffect(() => {
+    const lastQuery = localStorage.getItem('lastQuery');
+    search(lastQuery);
+  }, []);
+  
 
   // handle fetch data from server
   const search = async (q) => {
@@ -11,6 +18,8 @@ function App() {
     );
     const data = await response.json();
     setAnimals(data);
+    
+    localStorage.setItem('lastQuery', q);
   }
 
   return (
