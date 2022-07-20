@@ -43,4 +43,13 @@ function App() {
   )
 }
 
+// Search UI component
+function Animal({ type, name, age }) {
+  return (
+    <li>
+      <strong>{type}</strong> {name} ({age} years old)
+    </li>
+  );
+}
+
 export default App

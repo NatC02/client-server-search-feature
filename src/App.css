@@ -32,6 +32,10 @@
   }
 }
 
+li {
+  list-style-type: none;
+}
+
 .card {
   padding: 2em;
 }
