@@ -4,6 +4,15 @@ import './App.css'
 function App() {
   const [animals, setAnimals] = useState([]);
 
+  // handle fetch data from server
+  const search = async (q) => {
+    const response = await fetch(
+      "http:localhost:2000?" + new URLSearchParams({q})
+    );
+    const data = await response.json();
+    setAnimals(data);
+  }
+
   return (
     <main className="App">
       <h1>Search Animal</h1>
